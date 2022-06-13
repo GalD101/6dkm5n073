@@ -106,7 +106,23 @@ language = {
     'R': 'R',
     '!': '!',
 }
-
+idk = {
+    'ך': 'h',
+    'ק': 'k',
+    'ש': 's',
+    'ג': 'g',
+    'ט': 't',
+    'מ': 'm',
+    'ץ': 'z',
+    'ב': 'b',
+    'ס': 'S',
+    'ת': 'T',
+    'א': 'a',
+    'ר': 'r',
+    'ה': 'H',
+    'ד': 'd',
+    'כ': 'K',
+}
 # with open('6dkm5n073', 'r') as filp:
 #     for line in filp:
 #         print(line)
@@ -123,7 +139,7 @@ with open('6dkm5n073', 'r') as leet_speak:
         # fnyg im not sure if its the actual terminology
         # this will make it a lot harder to decrypt (I think)
         for l in line:
-            if (ord(l) % 6 == 0):
+            if (ord(l) % 6 == 4):
                 raw_text += ( ''.join(random.choice(letters_no_six) for i in range(1)) )
                 
 
@@ -134,10 +150,22 @@ for key, val in mapping.items():
 for key, val in language.items():
     enc_text = enc_text.replace(key, val)
 
+for key, val in idk.items():
+    enc_text = enc_text.replace(key, val)
+
 
 
 with open('enc', 'w') as enc:
     enc.write(enc_text)
 
-# a410c9304993aba0ed74421482aaa731fb76f55225b08e51b09b59806c816810
-# a71b72043284cc3a800c31439de4fe8fb4f138182b90ad8e345f9477625fdbb6
+# b80830d4a518ab799efe4c8c8ec7e7b093250770f9374c42cbd1c845535264ca - enc
+# 102890ca36034dfd8dc289f6db4dd6431d0b5fd1257e59419d5b3db1bc8120a6 - 6dkm5n073
+
+
+
+
+
+
+
+# a410c9304993aba0ed74421482aaa731fb76f55225b08e51b09b59806c816810 - enc
+# a71b72043284cc3a800c31439de4fe8fb4f138182b90ad8e345f9477625fdbb6 - 6dkm5n073
